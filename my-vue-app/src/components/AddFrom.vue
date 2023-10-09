@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
       <h1 class="title">Add New Product</h1>
       <form @submit.prevent="saveProduct">
@@ -52,4 +52,4 @@
   </script>
   
   <style></style>
-  
+   -->

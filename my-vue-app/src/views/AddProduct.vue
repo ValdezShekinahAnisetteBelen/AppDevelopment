@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <AddForm />
     </template>
     <script>
@@ -10,4 +10,4 @@
     },
     };
     </script>
-    <style></style>
+    <style></style> -->

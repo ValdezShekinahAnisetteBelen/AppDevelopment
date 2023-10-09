@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
     <h1 class="title">Update Product</h1>
     <form @submit.prevent="updateProduct">
@@ -70,4 +70,4 @@ export default {
 </script>
 <style>
 </style>
-
+ -->

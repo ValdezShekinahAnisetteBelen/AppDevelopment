@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
      <h1 class="title">Product List</h1>
      <router-link :to="{ name: 'AddProduct' }" class="button is-primary"
@@ -61,4 +61,4 @@
         };
         </script>
         <style></style>
-            
+             -->

@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <Product />
     </template>
     <script>
@@ -11,4 +11,4 @@
     };
     </script>
     <style></style>
-    
+     -->
