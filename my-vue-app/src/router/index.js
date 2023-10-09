@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Product from '../views/ProductView.vue'
+import AdminView from '../views/AdminView.vue'
 
 const routes = [
   {
