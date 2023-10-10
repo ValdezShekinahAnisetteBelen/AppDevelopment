@@ -18,15 +18,10 @@
         
       </router-view>
     </v-app>
-    <div>
-      <!-- Your component's template content goes here -->
-    </div>
   </div>
 </template>
-
 <script>
 import Cookies from "js-cookie";
-
 export default {
   name: "App",
   data() {
@@ -34,50 +29,30 @@ export default {
       deferredPrompt: null
     };
   },
-  mounted() {
-    this.loadScripts();
+  created() {
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      this.deferredPrompt = e;
+      if (Cookies.get("add-to-home-screen") === undefined) {
+    this.deferredPrompt = e;
+    }
+    });
+window.addEventListener("appinstalled", () => {
+      this.deferredPrompt = null;
+    });
   },
   methods: {
-    loadScripts() {
-      const scriptUrls = [
-        'js/jquery-3.4.1.min.js',
-        'js/bootstrap.min.js',
-        'js/jquery.countdown.min.js',
-        'js/jquery.nice-select.min.js',
-        'js/jquery.nicescroll.min.js',
-        'js/slick.min.js',
-        'js/biolife.framework.js',
-        'js/functions.js',
-      ];
-
-      const head = document.getElementsByTagName('head')[0];
-
-      scriptUrls.forEach((scriptUrl) => {
-        const script = document.createElement('script');
-        script.src = process.env.BASE_URL + scriptUrl;
-        script.async = true;
-        head.appendChild(script);
-      });
-    },
     async dismiss() {
       Cookies.set("add-to-home-screen", null, { expires: 15 });
+      this.deferredPrompt = null;
       this.deferredPrompt = null;
     },
     async install() {
       this.deferredPrompt.prompt();
-    },
-  },
-  created() {
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault();
-      this.deferredPrompt = e;
-      if (Cookies.get("add-to-home-screen") === undefined) {
-        this.deferredPrompt = e;
-      }
-    });
-    window.addEventListener("appinstalled", () => {
-      this.deferredPrompt = null;
-    });
-  },
+    }
+  }
 };
 </script>
+
+
