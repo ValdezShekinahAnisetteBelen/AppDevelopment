@@ -19,7 +19,7 @@
             </a>
             <ul>
             <li><a class="active" href="index-2.html">Directory</a></li>
-            <li><a href="index_2.html">Default</a></li>
+            <li><a href="index_2.html">E-Commerce</a></li>
             </ul>
             </li>
             <li class>
